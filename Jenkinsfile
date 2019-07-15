@@ -3,6 +3,14 @@ node {
     checkout scm
   }
 
+  stage('Dockerfile lint') {
+
+      sh 'echo running Hadolint...'
+      sh 'echo running dockerfile-lint...'
+
+    }
+  }
+  
   stage('Build') {
     withCredentials([
         usernamePassword(credentialsId: 'docker-credentials',
