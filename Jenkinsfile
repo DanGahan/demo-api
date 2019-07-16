@@ -33,6 +33,7 @@ node {
                          usernameVariable: 'USERNAME',
                          passwordVariable: 'PASSWORD')]) {
       sh 'docker login -p "${PASSWORD}" -u "${USERNAME}"'
+      sh 'export DOCKER_CONTENT_TRUST=1'
       sh 'docker image push ${USERNAME}/demo-api:latest'
     }
   }
