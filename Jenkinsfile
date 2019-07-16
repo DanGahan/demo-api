@@ -22,6 +22,7 @@ node {
       sh 'wget https://github.com/lukebond/microscanner-wrapper/raw/master/scan.sh -O /usr/local/bin/scan.sh && chmod +x /usr/local/bin/scan.sh'
       sh 'cat /usr/local/bin/scan.sh'
       sh 'ls -ltr /usr/local/bin/scan.sh'
+      sh 'env'
       sh 'echo MICROSCANNER_OPTIONS=--continue-on-failure /usr/local/bin/scan.sh ${USERNAME}/demo-api:latest > out.txt && cat out.txt'
       sh 'MICROSCANNER_OPTIONS=--continue-on-failure /usr/local/bin/scan.sh ${USERNAME}/demo-api:latest'
     }
